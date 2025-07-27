@@ -1,0 +1,14 @@
+# Redirect all requests to the public directory
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>
+
+# PHP settings that might help with 500 errors
+<IfModule mod_php7.c>
+    php_value display_errors 0
+    php_value log_errors 1
+    php_value error_log /path/to/error_log
+</IfModule>

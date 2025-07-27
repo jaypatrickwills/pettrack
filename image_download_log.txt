@@ -1,0 +1,21 @@
+Image Download Log - 2025-07-16 10:19:58
+
+Found 12 unique image URLs
+
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2023/01/shutterstock_1532654051-scaled.jpg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2021/05/dog-cat-travel-desktop.jpg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2024/02/British-Airways1.jpg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://images.pexels.com/photos/97082/weimaraner-puppy-dog-snout-97082.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2: HTTP Error 403: Forbidden
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2021/11/map-pet-travel-1.svg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2: HTTP Error 403: Forbidden
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2024/08/AP-pet-taxi-driver-dog-loaded-2024-1024x819.jpg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2024/05/AP-pet-taxi-vans-2024.jpg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2022/02/airpets-international-van-1.jpg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2: HTTP Error 403: Forbidden
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2020/01/dotted-map-bg.png: <urlopen error _ssl.c:1011: The handshake operation timed out>
+ERROR: Could not download https://airpetsinternational.com/wp-content/uploads/2020/01/austin.jpg: <urlopen error _ssl.c:1011: The handshake operation timed out>
+
+Summary:
+Total images: 12
+Successfully downloaded: 0
+Failed: 12

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="80" viewBox="0 0 200 80">
+  <style>
+    .logo-text { font-family: Arial, sans-serif; font-weight: bold; }
+    .main-text { font-size: 24px; fill: #004558; }
+    .sub-text { font-size: 14px; fill: #c7352c; }
+    .paw { fill: #c7352c; }
+  </style>
+  <rect width="200" height="80" fill="white" rx="5" ry="5"/>
+  <text x="10" y="35" class="logo-text main-text">AirPets</text>
+  <text x="10" y="55" class="logo-text sub-text">INTERNATIONAL</text>
+  <path class="paw" d="M160,30 c3,0 5,2 5,5 c0,3 -2,5 -5,5 c-3,0 -5,-2 -5,-5 c0,-3 2,-5 5,-5 z M145,25 c3,0 5,2 5,5 c0,3 -2,5 -5,5 c-3,0 -5,-2 -5,-5 c0,-3 2,-5 5,-5 z M175,25 c3,0 5,2 5,5 c0,3 -2,5 -5,5 c-3,0 -5,-2 -5,-5 c0,-3 2,-5 5,-5 z M155,45 c8,0 15,4 15,10 c0,6 -7,10 -15,10 c-8,0 -15,-4 -15,-10 c0,-6 7,-10 15,-10 z"/>
+</svg>
