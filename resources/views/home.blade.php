@@ -85,9 +85,9 @@
     <main>
         <section class="hero-section relative h-[80vh] overflow-hidden">
             <div class="slides">
-                <div class="slide" style="background-image: url('https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2');"></div>
-                <div class="slide" style="background-image: url('https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2');"></div>
-                <div class="slide" style="background-image: url('https://images.pexels.com/photos/97082/weimaraner-puppy-dog-snout-97082.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&dpr=2');"></div>
+                <div class="slide" style="background-image: url('{{ asset('images/pexels-photo-1108099.webp') }}');"></div>
+                <div class="slide" style="background-image: url('{{ asset('images/pexels-photo-1805164.webp') }}');"></div>
+                <div class="slide" style="background-image: url('{{ asset('images/weimaraner-puppy-dog-snout-97082.webp') }}');"></div>
             </div>
             <div class="absolute inset-0 bg-black bg-opacity-40 z-10"></div>
             <div class="relative h-full flex flex-col justify-center items-center text-center text-white p-6 z-20">
@@ -130,13 +130,13 @@
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 items-center">
                     <div class="flex justify-center lg:justify-end">
-                        <img src="https://airpetsinternational.com/wp-content/uploads/2023/01/shutterstock_1532654051-scaled.jpg" alt="Dog traveling with pet relocation services" class="rounded-lg shadow-lg max-w-[200px] h-auto">
+                        <img src="{{ asset('images/shutterstock_1532654051-scaled.jpg') }}" alt="Dog traveling with pet relocation services" class="rounded-lg shadow-lg max-w-[200px] h-auto">
                     </div>
                     <div class="flex justify-center">
-                        <img src="https://airpetsinternational.com/wp-content/uploads/2022/02/airpets-international-van-1.jpg" alt="white van used for ground pet transport with animal stickers at the back." class="rounded-lg shadow-lg max-w-[240px] h-auto">
+                        <img src="{{ asset('images/airpets-international-van-1.jpg') }}" alt="white van used for ground pet transport with animal stickers at the back." class="rounded-lg shadow-lg max-w-[240px] h-auto">
                     </div>
                     <div class="flex justify-center lg:justify-start">
-                        <img src="https://airpetsinternational.com/wp-content/uploads/2021/05/dog-cat-travel-desktop.jpg" alt="a dog with its tongue sticking out sitting beside a tabby cat" class="rounded-lg shadow-lg max-w-[200px] h-auto">
+                        <img src="{{ asset('images/dog-cat-travel-desktop.jpg') }}" alt="a dog with its tongue sticking out sitting beside a tabby cat" class="rounded-lg shadow-lg max-w-[200px] h-auto">
                     </div>
                 </div>
             </div>
@@ -159,7 +159,7 @@
             </div>
         </section>
 
-        <section class="py-16 sm:py-20" style="background-image: url('https://airpetsinternational.com/wp-content/uploads/2020/01/dotted-map-bg.png'); background-color: #0d2a3b; background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <section class="py-16 sm:py-20" style="background-image: url('{{ asset('images/dotted-map-bg.png') }}'); background-color: #0d2a3b; background-position: center; background-repeat: no-repeat; background-size: cover;">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl lg:text-5xl text-white font-pathway-gothic font-bold uppercase tracking-wider">Our Pet Moving Services</h2>
@@ -168,7 +168,7 @@
 
                     <a href="/domestic-relocations-services" class="group block bg-white shadow-lg overflow-hidden">
                         <div class="overflow-hidden">
-                            <img src="https://airpetsinternational.com/wp-content/uploads/2020/01/austin.jpg" alt="Austin skyline for domestic pet relocation" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <img src="{{ asset('images/austin.jpg') }}" alt="Austin skyline for domestic pet relocation" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                         </div>
                         <div class="p-8 text-center">
                             <h3 class="font-pathway-gothic text-2xl font-bold text-dark-blue uppercase tracking-wider mb-3">Domestic Pet Relocation</h3>
@@ -179,7 +179,7 @@
 
                     <a href="/international-relocation-services" class="group block bg-white shadow-lg overflow-hidden">
                         <div class="overflow-hidden">
-                            <img src="https://airpetsinternational.com/wp-content/uploads/2024/02/British-Airways1.jpg" alt="British Airways plane for international pet relocation" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <img src="{{ asset('images/British-Airways1.jpg') }}" alt="British Airways plane for international pet relocation" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                         </div>
                         <div class="p-8 text-center">
                             <h3 class="font-pathway-gothic text-2xl font-bold text-dark-blue uppercase tracking-wider mb-3">International Pet Relocation</h3>
@@ -191,7 +191,7 @@
                     <a href="/pet-ground-transportation" class="group block bg-white shadow-lg overflow-hidden relative">
                         <div class="absolute top-2 -right-10 transform rotate-45 bg-orange text-white text-xs font-bold px-10 py-1 uppercase tracking-wider z-10">United States</div>
                         <div class="overflow-hidden">
-                            <img src="https://airpetsinternational.com/wp-content/uploads/2024/05/AP-pet-taxi-vans-2024.jpg" alt="Pet transport van for ground transportation" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <img src="{{ asset('images/AP-pet-taxi-vans-2024.jpg') }}" alt="Pet transport van for ground transportation" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                         </div>
                         <div class="p-8 text-center">
                             <h3 class="font-pathway-gothic text-2xl font-bold text-dark-blue uppercase tracking-wider mb-3">Pet Ground Transportation</h3>
@@ -203,7 +203,7 @@
                     <a href="/pet-taxi-services" class="group block bg-white shadow-lg overflow-hidden relative">
                         <div class="absolute top-2 -right-10 transform rotate-45 bg-orange text-white text-xs font-bold px-10 py-1 uppercase tracking-wider z-10">Texas</div>
                         <div class="overflow-hidden">
-                            <img src="https://airpetsinternational.com/wp-content/uploads/2024/08/AP-pet-taxi-driver-dog-loaded-2024-1024x819.jpg" alt="Pet taxi driver with a dog" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
+                            <img src="{{ asset('images/AP-pet-taxi-driver-dog-loaded-2024-1024x819.jpg') }}" alt="Pet taxi driver with a dog" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 ease-in-out">
                         </div>
                         <div class="p-8 text-center">
                             <h3 class="font-pathway-gothic text-2xl font-bold text-dark-blue uppercase tracking-wider mb-3">Pet Taxi Services</h3>
@@ -413,7 +413,7 @@
                 <p class="font-open-sans max-w-2xl mx-auto mb-12" style="color: white !important;">See some of our more popular locations below!</p>
                 
                 <div class="relative w-full max-w-4xl mx-auto">
-                    <img src="https://airpetsinternational.com/wp-content/uploads/2021/11/map-pet-travel-1.svg" class="w-full h-auto" alt="World map showing pet travel destinations">
+                    <img src="{{ asset('images/map-pet-travel-1.svg') }}" class="w-full h-auto" alt="World map showing pet travel destinations">
                     
                     <!-- Hotspots - Mobile-friendly with responsive font sizes and positioning -->
                     <a href="#" class="absolute text-white text-[10px] sm:text-xs md:text-sm font-bold whitespace-nowrap uppercase px-2 py-1 sm:px-4 sm:py-2 rounded-full" style="top: 29%; left: 13%; transform: translate(-50%, -50%); background-color: #E32726;">NORTH AMERICA</a>
@@ -444,18 +444,18 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     @php
                         $pets = [
-                            ['name' => 'Dogs', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2020/02/shutterstock_424481974-scaled.jpg'],
-                            ['name' => 'Cats', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2019/08/QmxvZy03MzM1.jpeg'],
-                            ['name' => 'Guinea Pigs', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2017/03/download-1-1.jpg'],
-                            ['name' => 'Hedgehogs', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/Hedgehog.png'],
-                            ['name' => 'Iguanas', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2020/10/MJ.jpg'],
-                            ['name' => 'Lizards/Geckos', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/Gecko.png'],
-                            ['name' => 'Rabbits', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/API_img9-scaled.jpg'],
-                            ['name' => 'Rats & Mice', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/Rat.png'],
-                            ['name' => 'Skunks (descented)', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/Skunk.png'],
-                            ['name' => 'Snakes', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/snake.png'],
-                            ['name' => 'Sugar Gliders', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/sugar-glider.png'],
-                            ['name' => 'Tortoises', 'img' => 'https://airpetsinternational.com/wp-content/uploads/2024/09/Tortoise.png'],
+                            ['name' => 'Dogs', 'img' => asset('images/shutterstock_424481974-scaled.jpg')], 
+                            ['name' => 'Cats', 'img' => asset('images/QmxvZy03MzM1.jpeg')],
+                            ['name' => 'Guinea Pigs', 'img' => asset('images/download-1-1.jpg')],
+                            ['name' => 'Hedgehogs', 'img' => asset('images/Hedgehog.png')],
+                            ['name' => 'Iguanas', 'img' => asset('images/MJ.jpg')],
+                            ['name' => 'Lizards/Geckos', 'img' => asset('images/Gecko.png')],
+                            ['name' => 'Rabbits', 'img' => asset('images/API_img9-scaled.jpg')],
+                            ['name' => 'Rats & Mice', 'img' => asset('images/Rat.png')],
+                            ['name' => 'Skunks (descented)', 'img' => asset('images/Skunk.png')],
+                            ['name' => 'Snakes', 'img' => asset('images/snake.png')],
+                            ['name' => 'Sugar Gliders', 'img' => asset('images/sugar-glider.png')],
+                            ['name' => 'Tortoises', 'img' => asset('images/Tortoise.png')],
                         ];
                     @endphp
 
@@ -481,7 +481,7 @@
                 @php
                     $articles = [
                         [
-                            'img' => 'https://airpetsinternational.com/wp-content/uploads/2025/04/june-blog-1-1024x683.png',
+                            'img' => asset('images/june-blog-1-1024x683.png'),
                             'category' => 'International Pet Shipping',
                             'title' => 'What Do Pet Movers Do? A Guide to Stress-Free Pet Relocation',
                             'excerpt' => 'Relocating with pets can feel overwhelming. Between paperwork, transportation logistics, health requirements, and your pet’s well-being, it’s a lot to manage alone. That’s where professional',
@@ -489,7 +489,7 @@
                             'date' => 'June 19, 2025'
                         ],
                         [
-                            'img' => 'https://airpetsinternational.com/wp-content/uploads/2025/03/Navigating-Customs-Regulations-When-Flying-With-a-Dog-2-1024x1024.png',
+                            'img' => asset('images/Navigating-Customs-Regulations-When-Flying-With-a-Dog-2-1024x1024.png'),
                             'category' => 'International Pet Shipping',
                             'title' => 'The Best Ways to Ship Your Reptiles Safely and Legally',
                             'excerpt' => 'Shipping reptiles safely requires more than just a box and a label—it demands planning, precision, and a deep understanding of your scaly companion’s unique needs.',
@@ -497,7 +497,7 @@
                             'date' => 'May 8, 2025'
                         ],
                         [
-                            'img' => 'https://airpetsinternational.com/wp-content/uploads/2016/12/Pet-Transport-Service-1024x685.jpg',
+                            'img' => asset('images/Pet-Transport-Service-1024x685.jpg'),
                             'category' => 'Animal Crates Info & Posts',
                             'title' => 'How to Choose the Right Pet Transport Service for Your Furry Family Member',
                             'excerpt' => 'Whether you’re relocating across the country or moving overseas, finding a reliable pet transport service is crucial to ensuring your pet’s comfort, safety, and well-being.',
