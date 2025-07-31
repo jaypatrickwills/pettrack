@@ -1,4 +1,4 @@
-name: SFTP Deploy
+name: Deploy with rsync over SSH
 
 on:
   push:
@@ -10,14 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy via SFTP
-        uses: appleboy/scp-action@v0.1.4
+      - name: Sync files to server via rsync
+        uses: appleboy/rsync-action@v0.1.2
         with:
-          host: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          host: ${{ secrets.FTP_SERVER }}       # Your server IP or hostname
+          username: ${{ secrets.FTP_USERNAME }} # SSH username
+          key: ${{ secrets.SSH_PRIVATE_KEY }}   # SSH private key stored as secret
+          # port: 22                              # Change if SSH uses another port
           source: "./"
-          
+          target: "/home/ixzwwicdbh/petstravelinternational.com/"              # Change to your server's web root
+          args: "-avz --delete --exclude='.env'"
