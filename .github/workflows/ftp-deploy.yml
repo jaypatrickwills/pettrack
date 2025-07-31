@@ -1,25 +1,25 @@
-name: Deploy with rsync over SSH
+# name: Deploy with rsync over SSH
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
 
-      - name: Setup SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.FTP_SERVER }} >> ~/.ssh/known_hosts
-
-      - name: Sync files to server using rsync
-        run: |
-          rsync -avz --delete --exclude=".env" ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/home/ixzwwicdbh/petstravelinternational.com/
+#       - name: Deploy via rsync over SSH
+#         uses: appleboy/rsync-action@master
+#         with:
+#           host: ${{ secrets.FTP_SERVER }}             # Your server IP or domain
+#           username: ${{ secrets.FTP_USERNAME }}       # SSH username
+#           key: ${{ secrets.SSH_PRIVATE_KEY }}         # Your private SSH key
+#           port: 22                                     # Optional: Change if not using port 22
+#           source: "./"
+#           target: "/home/ixzwwicdbh/petstravelinternational.com/"
+#           args: "-avz --delete --exclude='.env'"
