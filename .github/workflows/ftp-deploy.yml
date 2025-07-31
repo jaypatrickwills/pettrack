@@ -14,7 +14,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Sync files to server via rsync
-        uses: appleboy/rsync-action@v0.1.2
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.FTP_SERVER }}       # Your server IP or hostname
           username: ${{ secrets.FTP_USERNAME }} # SSH username
