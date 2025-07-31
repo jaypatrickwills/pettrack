@@ -1,25 +1,22 @@
-name: FTP Deploy
+name: SFTP Deploy
 
 on:
   push:
     branches:
-      - main  # Replace with 'master' if that's your main branch
+      - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: 📥 Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: 🚀 Deploy to FTP server
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: Deploy via SFTP
+        uses: appleboy/scp-action@v0.1.4
         with:
-          server: ${{ secrets.FTP_SERVER }}           # e.g. 123.456.789.101 or server5.shared.spaceship.host
-          username: ${{ secrets.FTP_USERNAME }}       # e.g. admin@petstravelinternational.com
-          password: ${{ secrets.FTP_PASSWORD }}       # your FTP password
-          port: 21
-          protocol: ftp
-          # server-dir: /home/xflpekzi/domains/labradorpuppies.elementfx.com/public_html/
-          # local-dir: ./   # Make sure this is relative to your repo root
-          # dangerous-clean-slate: true
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USERNAME }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          
