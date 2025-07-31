@@ -3,21 +3,23 @@ name: FTP Deploy
 on:
   push:
     branches:
-      - main
+      - main  # Replace with 'master' if that's your main branch
 
 jobs:
   ftp-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy to FTP server
+      - name: 🚀 Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_SERVER }}           # e.g. 123.456.789.101 or server5.shared.spaceship.host
+          username: ${{ secrets.FTP_USERNAME }}       # e.g. admin@petstravelinternational.com
+          password: ${{ secrets.FTP_PASSWORD }}       # your FTP password
+          port: 21
+          protocol: ftp
           # server-dir: /home/xflpekzi/domains/labradorpuppies.elementfx.com/public_html/
           # local-dir: ./   # Make sure this is relative to your repo root
           # dangerous-clean-slate: true
