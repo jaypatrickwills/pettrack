@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Hero Banner Section -->
-    <section class="relative min-h-[400px] flex items-end bg-cover bg-center" style="background-image: url('https://airpetsinternational.com/wp-content/uploads/2022/02/airpets-america-ban-1.jpg')">
+    <section class="relative min-h-[400px] flex items-end bg-cover bg-center" style="background-image: url('{{ asset('images/airpets-america-ban-1.png') }}')">
         <div class="absolute inset-0 bg-black bg-opacity-40"></div>
         <div class="container mx-auto px-4 py-10 relative z-10">
             <div class="text-white max-w-2xl">
