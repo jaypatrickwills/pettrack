@@ -15,9 +15,9 @@ jobs:
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: server5.shared.spaceship.host
+          username: admin@petstravelinternational.com
+          password: &n50nda3(ADy
           # server-dir: /home/xflpekzi/domains/labradorpuppies.elementfx.com/public_html/
           # local-dir: ./   # Make sure this is relative to your repo root
           # dangerous-clean-slate: true
