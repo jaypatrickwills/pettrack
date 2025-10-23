@@ -9,16 +9,20 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class TrackingUpdated extends Mailable
+class ShipmentCreated extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $shipment;
+    public $recipientName;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($shipment, $recipientName = null)
     {
-        //
+        $this->shipment = $shipment;
+        $this->recipientName = $recipientName;
     }
 
     /**
@@ -27,7 +31,7 @@ class TrackingUpdated extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Tracking Updated',
+            subject: 'Shipment Created Successfully',
         );
     }
 
@@ -37,7 +41,7 @@ class TrackingUpdated extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.shipment-created',
         );
     }
 

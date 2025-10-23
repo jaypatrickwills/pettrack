@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Tracking;
 use App\Models\TrackingUpdate;
-use App\Notifications\TrackingUpdateNotification;
+use App\Mail\ShipmentCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Mail;
 
 class TrackingManagementController extends Controller
 {
@@ -74,8 +74,7 @@ class TrackingManagementController extends Controller
         
         // Send notification to the pet owner about the new tracking
         try {
-            Notification::route('mail', $validated['owner_email'])
-                ->notify(new TrackingUpdateNotification($tracking, $update));
+            Mail::to($validated['owner_email'])->send(new ShipmentCreated($tracking, $validated['owner_name']));
         } catch (\Exception $e) {
             // Log the error but don't stop execution
             logger('Failed to send initial tracking notification email: ' . $e->getMessage());
@@ -150,15 +149,12 @@ class TrackingManagementController extends Controller
             'admin_id' => Auth::guard('admin')->id(),
         ]);
         
-        // Send notification if email changed or any other significant details changed
-        if ($oldValues['owner_email'] != $validated['owner_email'] || 
-            $oldValues['pet_name'] != $validated['pet_name'] ||
-            $oldValues['destination'] != $validated['destination'] ||
-            $oldValues['estimated_arrival_date'] != $validated['estimated_arrival_date']) {
-            
-            // Send to the new email address
-            Notification::route('mail', $tracking->owner_email)
-                ->notify(new TrackingUpdateNotification($tracking, $update));
+        // Send notification to the pet owner about the update
+        try {
+            Mail::to($tracking->owner_email)->send(new \App\Mail\TrackingUpdate($tracking, $update));
+        } catch (\Exception $e) {
+            // Log the error but don't stop execution
+            logger('Failed to send tracking update email: ' . $e->getMessage());
         }
 
         return redirect()->route('admin.trackings.show', $tracking)
@@ -220,8 +216,7 @@ class TrackingManagementController extends Controller
         
         // Always send notification for status updates to the pet owner
         try {
-            Notification::route('mail', $tracking->owner_email)
-                ->notify(new TrackingUpdateNotification($tracking, $update));
+            Mail::to($tracking->owner_email)->send(new \App\Mail\TrackingUpdate($tracking, $update));
         } catch (\Exception $e) {
             // Log the error but don't stop execution
             logger('Failed to send tracking update email: ' . $e->getMessage());

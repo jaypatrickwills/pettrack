@@ -9,16 +9,24 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class TestEmail extends Mailable
+class TrackingUpdate extends Mailable
 {
     use Queueable, SerializesModels;
+
+    public $tracking;
+    public $update;
+    public $statusText;
+    public $viewUrl;
 
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($tracking, $update)
     {
-        //
+        $this->tracking = $tracking;
+        $this->update = $update;
+        $this->statusText = ucfirst(str_replace('_', ' ', $this->update->status));
+        $this->viewUrl = url('/track-pet/search?tracking_number=' . $this->tracking->tracking_number);
     }
 
     /**
@@ -27,7 +35,7 @@ class TestEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Test Email',
+            subject: 'Pet Tracking Update: ' . $this->tracking->pet_name . ' - ' . $this->statusText,
         );
     }
 
@@ -37,7 +45,13 @@ class TestEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.tracking-update',
+            with: [
+                'tracking' => $this->tracking,
+                'update' => $this->update,
+                'statusText' => $this->statusText,
+                'viewUrl' => $this->viewUrl,
+            ],
         );
     }
 

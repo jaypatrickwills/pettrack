@@ -50,6 +50,8 @@
     
     @include('partials.footer')
     
-    @include('partials.chat-widget')
+    {{-- @include('partials.chat-widget') --}}
+
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="2687dee2-aa24-4c73-856b-40cf8deb9686";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
 </body>
 </html>
